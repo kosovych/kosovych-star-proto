@@ -13,8 +13,6 @@ const state = {
 };
 
 function setDOMReacts() {
-    console.log('test');
-    
     Array.from(document.querySelectorAll('.star')).forEach(star => {
         const id = star.id;
         const DOMReact = star.getBoundingClientRect();
@@ -84,7 +82,6 @@ function minimyzeConstellation() {
     state.isMenuStateBig = false;
     state.currentX = 0;
     state.currentY = 0;
-    console.log(state[`gsap${state.focusedStarId}`]);
     state[`gsap${state.focusedStarId}`] = state[`gsap${state.focusedStarId}`].pause();
     return gsap.to('#constellation', {scale: state.currentScale, x: state.currentX, y:state.currentY, duration: 0.5});
 }
